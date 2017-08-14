@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BringChen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="平凡的脚步也可以走完伟大的行程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BringChen">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="BringChen">
+<meta property="og:description" content="平凡的脚步也可以走完伟大的行程">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BringChen">
+<meta name="twitter:description" content="平凡的脚步也可以走完伟大的行程">
+  
+    <link rel="alternate" href="/atom.xml" title="BringChen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BringChen</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">淡薄殇羽</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-windows个人美化教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/14/windows个人美化教程/" class="article-date">
+  <time datetime="2017-08-14T02:13:43.000Z" itemprop="datePublished">2017-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/14/windows个人美化教程/">windows个人美化教程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/14/windows个人美化教程/" data-id="cj6bk3mvq000260uascqohabm" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/14/hello-world/" class="article-date">
+  <time datetime="2017-08-14T01:30:41.015Z" itemprop="datePublished">2017-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/14/hello-world/">bringCloud</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>欢迎来到BringChen的博客</p>
+<p>#archLinux安装教程</p>
+<pre><code class="bash"><span class="comment"># lsblk（个人建议分一个区 sda1）</span>
+
+<span class="comment"># mkfs.ext4 /dev/sda1 //格式化</span>
+
+<span class="comment"># mount /dev/sda1 /mnt  //挂载</span>
+
+<span class="comment"># cd /etc/pacman.d //这里是源文件</span>
+
+<span class="comment"># grep -A 1 '##.*China' mirrorlist|grep -v '\-\-'&gt; mirrorlist2  //正则表达式保留中国源</span>
+<span class="comment"># cat mirrorlist&gt;&gt;mirrorlist2</span>
+<span class="comment"># mv mirrorlist2 mirrorlist</span>
+
+<span class="comment"># pacman -Syy //刷新</span>
+
+<span class="comment"># pacstrap -i /mnt base base-devel //开始安装系统</span>
+
+<span class="comment"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
+
+<span class="comment"># arch-chroot /mnt</span>
+
+<span class="comment"># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime //设置时间</span>
+
+<span class="comment"># hwclock --systohc --utc   //设置为utc</span>
+
+<span class="comment"># nano /etc/locale.gen</span>
+//填入以下内容，然后按ctrl+x按y回车保存退出
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+
+<span class="comment"># locale-gen</span>
+
+<span class="comment"># echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</span>
+
+<span class="comment"># echo myhostname &gt; /etc/hostname</span>
+//myhostname 可以自定义
+
+<span class="comment"># nano /etc/hosts</span>
+//在 ::1        localhost.localdomain    localhost 的下一行添加以下内容，myhostname 和上文的一致
+127.0.1.1    myhostname.localdomain    myhostname
+
+<span class="comment"># mkinitcpio -p linux</span>
+
+<span class="comment"># passwd root</span>
+设置root密码
+
+<span class="comment"># useradd -m -g users -s /bin/bash user</span>
+//添加用户，user 可自定义
+<span class="comment"># passwd user</span>
+设置用户密码，user与上文相同
+
+
+
+<span class="comment"># pacman -S efibootmgr grub os-prober (efi引导）</span>
+<span class="comment"># grub-install --efi-directory=/boot --bootloader-id=grub(efi引导）</span>
+
+pacman -S os-prober    多系统用户一定要添加
+<span class="comment">#pacman -S grub-bios传统</span>
+<span class="comment">#grub-install /dev/sda传统---如果报错添加--force参数就好了</span>
+grub-install --force /dev/sda
+
+
+<span class="comment"># grub-mkconfig -o /boot/grub/grub.cfg</span>
+
+<span class="comment"># systemctl enable dhcpcd</span>
+
+<span class="comment"># exit</span>
+
+<span class="comment"># umount -R /mnt</span>
+
+<span class="comment"># reboot</span>
+
+
+
+修改开机如把win设置为默认
+
+
+    默认情况下Windows 7对应的文件名是30_os-prober，第一个linux系统对应的是10-linux，00是header，05是debian-theme，可见10是第一个启动项，只需要更改Windows 7的文件名(06-09均可)即可改变启动顺序，经我测试，成功地修改了启动顺序。
+
+    具体做法：
+    sudo mv /etc/grub.d/30_os-prober /etc/grub.d/08_os-prober
+    sudo update-grub
+
+安装plasma5 
+1、安装基础包
+
+<span class="comment"># pacman -S plasma</span>
+1
+2、安装完整包
+
+<span class="comment"># pacman -S plasma-meta</span>
+1
+3、最简安装（仅有桌面软件）
+
+<span class="comment"># pacman -S plasma-desktop</span>
+1
+然后是登录管理器SDDM
+
+<span class="comment"># pacman -S sddm</span>
+1
+将SDDM设置为开机自启动
+
+<span class="comment"># systemctl enable sddm</span>
+
+
+
+后续优化（以kde为例）
+安装yaourt 
+Yaourt是archlinux方便使用的关键部件之一，但没有被整合到系统安装中的工具。建议在装完系统重启之后，更新完pacman和基本系统之后，就安装这个工具。 
+最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf，在文件最后加入:
+[archlinuxcn]
+<span class="comment">#The Chinese Arch Linux communities packages.</span>
+SigLevel = Optional TrustAll
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/<span class="variable">$arch</span>
+  ● 1
+  ● 2
+  ● 3
+  ● 4
+然后，用命令
+<span class="comment"># pacman -Syy</span>
+  ● 1
+清理一下pacman数据库缓存，应该能看到archlinuxcn的字样。 
+最后用
+<span class="comment"># pacman -S yaourt</span>
+  ● 1
+安装Yaourt部件。
+中文输入法
+这里安装ibus作为中文输入法
+<span class="comment"># sudo pacman -S ibus</span>
+<span class="comment"># sudo pacman -S ibus-pinyin</span>
+  ● 1
+  ● 2
+在~/.bashrc里面加入
+<span class="comment"># export GTK_IM_MODULE=ibus</span>
+<span class="comment"># export XMODIFIERS=@im=ibus</span>
+<span class="comment"># export QT_IM_MODULE=ibus</span>
+  ● 1
+  ● 2
+  ● 3
+然后在设置里启用输入法
+你也可以安装fcitx：
+<span class="comment"># sudo pacman -S fcitx-im fcitx-configtool</span>
+  ● 1
+同样的，在~/.bashrc写入
+<span class="comment"># export GTK_IM_MODULE=fcitx</span>
+<span class="comment"># export QT_IM_MODULE=fcitx</span>
+<span class="comment"># export XMODIFIERS=“@im=fcitx”</span>
+  ● 1
+  ● 2
+  ● 3
+安装搜狗输入法
+<span class="comment"># yaourt -S fcitx-sogoupinyin</span>
+  ● 1
+然后进入fcitx设置进行配置即可
+安装谷歌浏览器
+<span class="comment"># yaourt -S google-chrome</span>
+  ● 1
+至于桌面的美化，kde里面可供下载，大家可以打开system setting进行配置，有壁纸和主题供下载的。 
+最后希望大家都能装出一个属于自己的个性的archlinux吧。
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/14/hello-world/" data-id="cj6bk3mvf000060uacai933et" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/14/windows个人美化教程/">windows个人美化教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/14/hello-world/">bringCloud</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 BringChen<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
